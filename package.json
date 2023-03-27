@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "realm-web": "^2.0.0",
     "typescript": "^5.0.2"
   },
   "devDependencies": {

@@ -6,8 +6,7 @@ import { Provider } from 'react-redux';
 
 // project imports
 
-import Album from './components/Album';
-import StickyFooter from './components/footer';
+import App from './app';
 
 // style + assets
 
@@ -15,10 +14,7 @@ import StickyFooter from './components/footer';
 
 ReactDOM.render(
     
-        <BrowserRouter>
-            <Album />
-            
-        </BrowserRouter>,
+        <App />,
     
     document.getElementById('root')
 );

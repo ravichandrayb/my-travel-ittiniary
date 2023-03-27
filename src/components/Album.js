@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import StickyFooter from './footer';
+import { NavLink } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -38,12 +38,44 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Ittiniaries
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+      >
+        <Toolbar sx={{ flexWrap: 'wrap' }}>
+          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            Mishi Monu
           </Typography>
+          <nav>
+            <Link
+              variant="button"
+              color="text.primary"
+              href="#"
+              sx={{ my: 1, mx: 1.5 }}
+            >
+              Features
+            </Link>
+            <Link
+              variant="button"
+              color="text.primary"
+              href="#"
+              sx={{ my: 1, mx: 1.5 }}
+            >
+              Support
+            </Link>
+          </nav>
+          <NavLink
+              className="navbar-item"
+              activeClassName="is-active"
+              to="/login"
+            >
+              About
+            </NavLink>
+          <Button href="/login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
       <main>
@@ -76,8 +108,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained">Add Ittiniary</Button>
+              <Button variant="outlined">Search Ittiniary</Button>
             </Stack>
           </Container>
         </Box>
@@ -120,7 +152,6 @@ export default function Album() {
       {/* Footer */}
       
       {/* End footer */}
-      <StickyFooter />
     </ThemeProvider>
   );
 }
